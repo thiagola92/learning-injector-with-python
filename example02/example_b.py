@@ -12,10 +12,6 @@ class SecondClass:
         self.fc = fc
 
 
-def configure(binder):
-    binder.bind(FirstClass, to=FirstClass(100))
-
-
-injector = Injector(configure)
-sc = injector.get(SecondClass)
+fc = FirstClass(100)
+sc = SecondClass(fc)
 print(sc.fc.example)
